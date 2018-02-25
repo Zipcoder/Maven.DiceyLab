@@ -29,7 +29,7 @@ public class Simulation {
     }
 
 
-
+//everytime we run the simulation, we increment the bin by
     public void runSimulation(){
         for(int i = 0; i < numberOfThrows; i++) {
             bins.incrementBin(dice.tossAndSum());
