@@ -8,23 +8,27 @@ public class SimulationTest {
 
 
 
-    @Test
-    public void testRunSimulation(){
-        Simulation simulation= new Simulation(1, 1);
-        Bins bins = new Bins(1, 6);
-
-
-
-    }
-//
 //    @Test
-//    public void testNumberOfStars(){
-//        Simulation simulation = new Simulation(10, 15);
+//    public void testRunSimulation(){
+//        Simulation simulation= new Simulation(1, 1);
+//        Bins bins = new Bins(1, 6);
 //
-//        String expected = "**********";
-//        String actual = simulation.numberOfStars(simulation.numberOfDie);
+//        int expected = 9;
+//        int actual = (int)simulation.runSimulation();
 //
-//        Assert.assertEquals(expected,actual);
-//    }
+//        Assert.assertTrue(expected >= actual && expected <= actual);
+//
+//        }
+
+    @Test
+    public void testNumberOfStars(){
+        Simulation simulation = new Simulation(10, 15);
+
+        String expected = "***";
+        String actual = simulation.numberOfStars(3);
+
+        Assert.assertEquals(expected,actual);
+    }
+
 
 }

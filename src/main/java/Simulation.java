@@ -36,12 +36,10 @@ public class Simulation {
         }
     }
 
-    public String numberOfStars (Integer outcomeOfDiceRoll) {
+    public String numberOfStars (Integer percentageOfOutcome) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < outcomeOfDiceRoll; i++){
-            if(i < 17) {
+        for (int i = 0; i < percentageOfOutcome; i++){
                sb.append("*");
-           }
         }
         return sb.toString();
     }
@@ -53,7 +51,7 @@ public class Simulation {
             int diceSum = i;
             int numOfOccurrence = bins.getBin(diceSum);
             sb.append(String.format(" %2d :   %7d: %.2f ", diceSum, numOfOccurrence, (numOfOccurrence/(float)numberOfThrows)));
-            sb.append(numberOfStars(diceSum)+ "\n");
+            sb.append(numberOfStars((int) ((numOfOccurrence/(float)numberOfThrows)*100))+ "\n");
         }
 
         System.out.println(sb.toString());
