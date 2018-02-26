@@ -8,7 +8,7 @@ public class Bins {
     private int[] results;
 
     public Bins (int minIndex, int maxIndex) {
-        results = new int[maxIndex];
+        results = new int[maxIndex +1];
     }
 
     public int getBins(int outcome) {
