@@ -7,7 +7,7 @@ public class Simulation {
 
     //constructor
     public Simulation(Integer numOfTosses, Integer numOfOfDies){
-        Dice dice = new Dice(numOfOfDies);
+        dice = new Dice(numOfOfDies);
 
         startBound = numOfOfDies;
         endBound = numOfOfDies * 6;
@@ -18,6 +18,7 @@ public class Simulation {
     }
 
     public void runSimulation(){
+
         for (int i = 0; i < numOfTosses; i++){
             bins.addToBin(dice.sumOfToss());
         }
