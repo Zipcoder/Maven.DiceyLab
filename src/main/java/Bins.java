@@ -1,9 +1,12 @@
+
 import java.util.Map;
 import java.util.TreeMap;
 
+
+
 public class Bins {
 
-   static  Map<Integer, Integer> diceRollTotalsAndFrequency = new TreeMap<Integer, Integer>();
+   static  Map<Integer, Integer> diceRollTotalsAndFrequency = new TreeMap<>();
 
    public static void persistDiceRoll(Integer diceRollValue){
 
@@ -15,6 +18,8 @@ public class Bins {
            currentValue++;
        }
        diceRollTotalsAndFrequency.put(diceRollValue, currentValue);
+
+
 
        //diceRollTotalsAndFrequency.put(diceRollValue,
        // diceRollTotalsAndFrequency.get(diceRollValue) == null ?
