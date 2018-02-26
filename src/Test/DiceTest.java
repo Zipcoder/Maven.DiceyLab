@@ -26,4 +26,8 @@ public class DiceTest {
 
         Assert.assertTrue(actual >= dice.numberofDies && actual <= dice.numberofDies *6);
     }
+
+
+
+
 }

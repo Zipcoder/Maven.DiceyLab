@@ -7,7 +7,13 @@ public class Bins {
     private int[] sumOfDiceRolls;
 
     /*This sets array of all possible sums
-    wiht the exception of 0 and 1*/
+    with the exception of 0 and 1*/
+
+    public Bins()
+    {
+
+    }
+
     public Bins(int startBound, int endBound)
     {
         sumOfDiceRolls = new int[endBound + 1];

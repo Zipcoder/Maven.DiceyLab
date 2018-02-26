@@ -14,7 +14,9 @@ public class Simulation {
         startBound = numberOfDies;
         endBound = numberOfDies * 6;
 
-        this.numberOfTosses = numberOfDies;
+        this.numberOfTosses = numberOfTosses;
+
+        bins = new Bins(startBound, endBound);
 
     }
 
@@ -26,7 +28,7 @@ public class Simulation {
         }
     }
 
-    public String asterisks(Integer percentages)
+    public static String asterisks(Integer percentages)
     {
         StringBuilder sb = new StringBuilder();
 
@@ -48,13 +50,22 @@ public class Simulation {
         {
             int diceSum = i;
             int numberOfOccurence = bins.getBin(diceSum);
+            int percent = (int)(numberOfOccurence/(float)numberOfTosses * 100);
 
-            sb.append(String.format(" 2d : %7d: %.2f", diceSum, numberOfOccurence, (numberOfOccurence/(float)numberOfTosses)));
-            sb.append(asterisks((int) ((numberOfTosses/(float)numberOfTosses) + 100)) + "\n");
+            sb.append(String.format("%2d : %7d: %.2f", diceSum, numberOfOccurence, (numberOfOccurence/(float)numberOfTosses)));
+            sb.append(asterisks(percent) + "\n");
         }
 
         System.out.println(sb.toString());
         return sb.toString();
+    }
+
+    public static void main(String[] args)
+    {
+        Simulation simulation = new Simulation(2, 1000000);
+        simulation.runSimulation();
+        simulation.printResults();
+
     }
 
 
