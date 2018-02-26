@@ -30,5 +30,10 @@ public class Simulation extends Dice {
 
         }
 
+    public static void main(String[] args) {
+
+
+    }
+
     }
 
