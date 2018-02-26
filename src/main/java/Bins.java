@@ -5,14 +5,18 @@ public class Bins {
     int minIndex;
     int maxIndex;
 
-    TreeMap<Integer, Integer> results = new TreeMap<Integer, Integer>();
+    private int[] results;
 
     public Bins (int minIndex, int maxIndex) {
-        results = new TreeMap<Integer, Integer>();
+        results = new int[maxIndex];
     }
 
-    public void addCount(int dieNumber, int count) {
-        results.get(dieNumber).(count+1);
+    public int getBins(int outcome) {
+        return results[outcome];
+    }
+
+    public void incrementBin(int outcome) {
+        results[outcome]++;
     }
 
 }
