@@ -18,7 +18,7 @@ public class Dice {
 
         }
 
-        return dice;
+        return sumOfRoll;
     }
 
 

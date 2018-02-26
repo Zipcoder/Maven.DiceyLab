@@ -1,11 +1,5 @@
-
-
-import org.junit.jupiter.api.Test;
-import sun.jvm.hotspot.utilities.Assert;
 import org.junit.Assert;
-
-
-
+import org.junit.Test;
 
 public class DiceTest {
 
@@ -28,8 +22,30 @@ public class DiceTest {
 
         Integer actualToss = dice.sumOfToss();
 
-        Assert.
-//                (actualToss >= dice.numberOfDice && actualToss <= dice.numberOfDice * 6);
+        Assert.assertTrue(actualToss >= dice.numberOfDice && actualToss <= dice.numberOfDice * 6);
+
+    }
+
+    @Test
+    public void testSumOfToss2(){
+        //Given
+        Dice dice = new Dice(5);
+
+        Integer actualToss = dice.sumOfToss();
+
+        Assert.assertTrue(actualToss >= dice.numberOfDice && actualToss <= dice.numberOfDice * 6);
+
+    }
+
+    @Test
+    public void testSumOfToss3(){
+        //Given
+        Dice dice = new Dice(8);
+
+        Integer actualToss = dice.sumOfToss();
+
+        Assert.assertTrue(actualToss >= dice.numberOfDice && actualToss <= dice.numberOfDice * 6);
+
     }
 
 }
