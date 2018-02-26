@@ -12,21 +12,21 @@ public class Bins {
 
         // Create hashmap put min in first key add one till hit the last key which is max.
         this.keepTrack = new HashMap<Integer, Integer>();
-        for (Integer i = minDiceRange; i <= maxDiceRange; i++) {
-            keepTrack.put(i, 0);
+        for (Integer key = minDiceRange; key <= maxDiceRange; key++) {
+            keepTrack.put(key, 0);
         }
     }
 
     // roll dice and add 1 to the value of the key that was just rolled
-    public void incrementBin(Integer rollValue) {
-        Integer currentBinCount = keepTrack.get(rollValue);
-        keepTrack.put(rollValue, currentBinCount + 1);
+    public void incrementBin(Integer rollKey) {
+        Integer rollValue = keepTrack.get(rollKey);
+        keepTrack.put(rollKey, rollValue + 1);
 
     }
 
-    //retrieve count for any key and return
-    public Integer getBin(Integer rollValue) {
-        return keepTrack.get(rollValue);
+    //retrieve and return count for any key
+    public Integer getBin(Integer rollKey) {
+        return keepTrack.get(rollKey);
     }
 
     public static void main(String[] args) {
