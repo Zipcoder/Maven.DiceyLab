@@ -4,7 +4,7 @@ public class Bins {
 
     private int startingPoint;
     private int endingPoint;
-    private HashMap<Integer, Integer> recordOfRolls;
+    protected HashMap<Integer, Integer> recordOfRolls;
 
     public Bins(int startingPoint, int endingPoint) {
         recordOfRolls = new HashMap<>();
