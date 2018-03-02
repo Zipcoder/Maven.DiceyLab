@@ -19,11 +19,11 @@ public class BinsTest {
         Integer numberOfTens = results.getBin(10);
     }
 
-    @Test
-    public void incrementBinsTest(){
-        Bins results;
-        results.incrementBin(10);
-    }
+//    @Test
+//    public void incrementBinsTest(){
+//        Bins results;
+//        results.incrementBin(10);
+//    }
 
 
 }
