@@ -34,14 +34,14 @@ public class Dice {
     }
 
     public static void main(String[] args) {
-        Dice dice = new Dice(1); // for craps
+        Dice dice = new Dice(2); // for craps
         Dice dice2 = new Dice(5); // for yatzee
 
         Integer toss = dice.tossAndSum();
         Integer toss2 = dice2.tossAndSum();
 
-        System.out.println("The ressult of the first toss was " + toss);
-        System.out.println("The result of the second toss waS " + toss2);
+        System.out.println("The result of the first toss was " + toss);
+        System.out.println("The result of the second toss was " + toss2);
 
 
 

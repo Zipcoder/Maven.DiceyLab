@@ -2,9 +2,13 @@ import java.util.HashMap;
 
 public class Bins {
 
-    protected HashMap<Integer, Integer> numOfTimesWeveRolledEachNUm;
+    protected HashMap<Integer, Integer> numOfTimesWeveRolledEachNUm = new HashMap<Integer, Integer>();
 
-    public Bins(Integer minDiceRange, Integer maxDiceRange)
+    public Bins(Integer smallestPossible, Integer largestPossible){
+        for (Integer key = smallestPossible; key <= largestPossible; key++){
+            numOfTimesWeveRolledEachNUm.put(key, 0);
+        }
+    }
 
     public Bins(int start, int end) {
 
