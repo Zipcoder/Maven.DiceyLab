@@ -21,7 +21,7 @@ results.incrementBin(10); // should increment bin # 10
 make a couple unit tests for the Bins class.
 
 Create a Simulation class whose Constructor takes arguments:
-    numberOfDies to throw
+    numberOfDie to throw
     numberOfTosses to run
 
 Create a simulation where two dies are thrown one million times. Keep track of all results.
