@@ -1,55 +1,72 @@
 public class  Simulation {
 
 
-Integer dices;
+Integer dice;
 Integer rolling;
 Bins newBin;
 Integer key;
 
 
     public static void main(String[] args) {
-        Simulation simulation = new Simulation(2,10);
+        Simulation simulation = new Simulation(2,1000000);
         simulation.runSimulation();
         simulation.printResults();
-
 
     }
 
     public Simulation(int dices, int rolling) {
-        this.dices= dices;
+        this.dice= dices;
         this.rolling = rolling;
 
     }
 
 
     public Bins runSimulation(){
-        Dice trial = new Dice(dices);
-        Bins newBin = new Bins(dices,dices*6);
+        Dice trial = new Dice(dice);
+        newBin = new Bins(dice,dice*6);
         int i = 0;
         while(i<rolling) {
 
             key = trial.tossAndSum();
-            System.out.println(key);
 
             newBin.addToBin(key);
 
             i++;
 
-            System.out.println(newBin.getBin(key));
         }
         return newBin;
 
     }
     public void printResults(){
+        int j=0;
+        String name ="";
 
+        for (int i = dice; i <=dice*6 ; i++) {
+           int numOfStars = Integer.parseInt(Integer.toString(newBin.getBin(i)).substring(0,1));
+           if (numOfStars==1){
+               numOfStars= Integer.parseInt(Integer.toString(newBin.getBin(i)).substring(0,2));
+           }
 
-
-
-            System.out.println( " :    " );
-
+            newBin.getBin(i);
+            name += String.format("%2d",i) + " : "
+                    +String.format("%8d",newBin.getBin(i))+ " : "
+                    +String.format("%5.2f",(float)newBin.getBin(i)/(float)rolling)
+                    +printStars(numOfStars)+ "\n";
 
 
         }
+        System.out.println(name);
+
 
     }
+
+    public String printStars(Integer starsNumber){
+        String empty="";
+        for (int i = 0; i <starsNumber ; i++) {
+            empty +="*";
+        }return empty;
+
+        }
+
+}
 
