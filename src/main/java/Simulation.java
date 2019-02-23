@@ -14,8 +14,8 @@ Integer key;
 
     }
 
-    public Simulation(int dices, int rolling) {
-        this.dice= dices;
+    public Simulation(int dice, int rolling) {
+        this.dice= dice;
         this.rolling = rolling;
 
     }
