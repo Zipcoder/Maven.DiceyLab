@@ -16,11 +16,6 @@ public class DiceTest {
     }
 
     @Test
-    public void getRollsTest() {
-
-    }
-
-    @Test
     public void tossAndSumTest() {
         Integer numberOfDice = 1;
         Dice dice = new Dice(numberOfDice);

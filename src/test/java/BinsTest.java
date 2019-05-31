@@ -21,7 +21,4 @@ public class BinsTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
-    public void getBin() {
-    }
 }
