@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class Simulation {
 
     private int numberOfReps;
@@ -24,6 +28,19 @@ public class Simulation {
                     (bins.getBinValue(i)*1.0)/(numberOfReps*1.0),getStars(i)));
         }
         return sbuild.toString();
+    }
+
+    public void printSimToFile(String fileName) throws IOException {
+        File printFile = new File(fileName);
+        if(!printFile.exists()){
+            printFile.createNewFile();
+        }
+        PrintWriter fout;
+        fout = new PrintWriter(printFile);
+        //fout.printf("")
+        fout.write(printSim());
+        fout.flush();
+        fout.close();
     }
 
     public String getStars(int binNumber){

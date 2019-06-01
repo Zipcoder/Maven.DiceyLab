@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -6,5 +8,12 @@ public class Main {
         sim.runSim();
 
         System.out.println(sim.printSim());
+
+        try {
+            sim.printSimToFile("RobertResults.md");
+        } catch ( IOException e){
+            System.out.println("IOException");
+            System.out.println(e.toString());
+        }
     }
 }
