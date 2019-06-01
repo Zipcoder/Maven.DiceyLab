@@ -20,4 +20,30 @@ public class DiceTest {
         Integer actual = dice.getSides();
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void defaultConstructorTest(){
+        // Given
+        dice = new Dice();
+
+        // When
+        Integer expected = 6;
+
+        // Assert
+        Integer actual = dice.getSides();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void contstructorTest(){
+        // Given
+        dice = new Dice(3,4);
+
+        // When
+        Integer expected = 4;
+
+        // Assert
+        Integer actual = dice.getSides();
+        Assert.assertEquals(expected, actual);
+    }
 }
