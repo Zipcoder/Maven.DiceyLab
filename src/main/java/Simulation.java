@@ -16,12 +16,14 @@ public class Simulation {
         }
     }
 
-    public void printSim(){
+    public String printSim(){
         // String format should be more flexible
+        StringBuilder sbuild = new StringBuilder();
         for(int i = bins.getMinValue(); i <= bins.getMaxValue(); i++){
-            System.out.printf("%2d:%8d:%5.2f %s\n",i,bins.getBinValue(i),
-                    (bins.getBinValue(i)*1.0)/(numberOfReps*1.0),getStars(i));
+            sbuild.append(String.format("%2d:%8d:%5.2f %s\n",i,bins.getBinValue(i),
+                    (bins.getBinValue(i)*1.0)/(numberOfReps*1.0),getStars(i)));
         }
+        return sbuild.toString();
     }
 
     public String getStars(int binNumber){

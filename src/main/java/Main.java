@@ -5,6 +5,6 @@ public class Main {
 
         sim.runSim();
 
-        sim.printSim();
+        System.out.println(sim.printSim());
     }
 }
