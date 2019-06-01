@@ -25,8 +25,14 @@ public class Simulation {
     }
 
     public String getStars(int binNumber){
+        StringBuilder sbuild = new StringBuilder();
+        //int value = bins.getBinValue(binNumber);
 
-        return null;
+        for(int i = 0; i < bins.getBinValue(binNumber)/10000; i++){
+            sbuild.append('*');
+        }
+
+        return sbuild.toString();
     }
 
 
