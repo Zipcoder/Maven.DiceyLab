@@ -37,7 +37,8 @@ public class Simulation {
         }
         PrintWriter fout;
         fout = new PrintWriter(printFile);
-        //fout.printf("")
+        fout.printf("Number of Throws: %d\n",numberOfReps);
+        fout.printf("Number of Dice:   %d\n\n",dice.getNumberOfDice());
         fout.write(printSim());
         fout.flush();
         fout.close();
