@@ -46,4 +46,32 @@ public class DiceTest {
         Integer actual = dice.getSides();
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void rollTest(){
+        // Given
+        Integer sides = 2;
+        Integer quantity = 1;
+        Integer max = sides * quantity;
+        dice = new Dice(quantity,sides);
+
+        // When
+        Integer result = dice.roll();
+
+        // Assert
+        Boolean expected = (result >= sides && result <= max);
+    }
+
+    @Test
+    public void getHighestRoll(){
+        // Given
+        dice = new Dice(3,6);
+
+        // When
+        Integer actual = dice.getHighestRoll();
+
+        // Assert
+        Integer expected = 18;
+        Assert.assertEquals(expected, actual);
+    }
 }

@@ -18,14 +18,18 @@ public class Dice {
 
     public Integer roll(){
         Random r = new Random();
-        return r.nextInt(quantity * sides + 1);
+        return r.nextInt(quantity * sides) + 1;
     }
 
-    public void setSides(Integer sides){
-        this.sides = sides;
+    public Integer getHighestRoll(){
+        return sides * quantity;
     }
 
     public Integer getSides(){
         return sides;
+    }
+
+    public void setSides(Integer sides){
+        this.sides = sides;
     }
 }
