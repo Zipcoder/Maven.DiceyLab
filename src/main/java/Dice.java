@@ -20,8 +20,12 @@ public class Dice {
     }
 
     public Integer roll(){
+        Integer result = 0;
         Random r = new Random();
-        return r.nextInt(quantity * sides) + 1;
+        for(int i = 0; i < quantity; i++){
+            result += r.nextInt(sides) + 1;
+        }
+        return result;
     }
 
     public Integer getHighestRoll(){

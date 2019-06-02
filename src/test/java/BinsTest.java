@@ -22,7 +22,7 @@ public class BinsTest {
     }
 
     @Test
-    public void runTrialTest(){
+    public void runTrialTest(){//TODO broken again, due to new formatting in Bins
         // Given
         Integer quantity = 3;
         Integer numberOfTrials = 3;

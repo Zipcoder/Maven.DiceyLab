@@ -51,7 +51,7 @@ public class DiceTest {
     public void rollTest(){
         // Given
         Integer sides = 2;
-        Integer quantity = 1;
+        Integer quantity = 5;
         dice = new Dice(quantity,sides);
         Integer maxRoll = dice.getHighestRoll();
 
