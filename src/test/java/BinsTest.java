@@ -25,6 +25,20 @@ public class BinsTest {
 
     @Test
     public void runTrialTest(){
-        //
+        // Given
+        Integer quantity = 5;
+        Integer numberOfTrials = 5;
+        dice = new Dice(quantity);
+        bin = new Bins(dice);
+
+        // When
+        Integer actual = 0;
+        bin.runTrial(numberOfTrials);
+        for(Integer num : bin.getResults()){
+            actual += num;
+        }
+
+        // Assert
+        Assert.assertEquals(numberOfTrials, actual);
     }
 }
