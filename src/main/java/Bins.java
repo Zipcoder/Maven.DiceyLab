@@ -29,6 +29,10 @@ public class Bins {
         return trimmedResults;
     }
 
+    public Dice getDice(){
+        return dice;
+    }
+
     public Integer[] getRawResults(){
         return results;
     }

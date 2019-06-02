@@ -1,4 +1,5 @@
 import com.sun.deploy.uitoolkit.impl.awt.AWTWindowFactory;
+import com.sun.org.apache.xpath.internal.operations.String;
 
 public class Simulation {
     private Integer numberOfDice;
@@ -19,6 +20,7 @@ public class Simulation {
     }
 
     public void getDisplay(){//TODO prints graphical display of normalized dist.
-
+//        StringBuilder output = new StringBuilder();
+//        for(int i = 0; i < )
     }
 }
