@@ -11,9 +11,6 @@ public class Simulation {
         this.numberOfTosses = numberOfTosses;
         bin = new Bins(new Dice(numberOfDice));
     }
-    public static void main(String[] args) {
-
-    }
 
     public void runSimulation(){
         bin.runTrial(numberOfTosses);
