@@ -52,14 +52,15 @@ public class DiceTest {
         // Given
         Integer sides = 2;
         Integer quantity = 1;
-        Integer max = sides * quantity;
         dice = new Dice(quantity,sides);
+        Integer maxRoll = dice.getHighestRoll();
 
         // When
         Integer result = dice.roll();
 
         // Assert
-        Boolean expected = (result >= sides && result <= max);
+        Boolean expected = (result >= quantity && result <= maxRoll);
+        Assert.assertTrue(expected);
     }
 
     @Test

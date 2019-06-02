@@ -12,6 +12,12 @@ public class Bins {
         results = new Integer[dice.getHighestRoll() + 1];
     }
 
+    public void runTrial(Integer numOfRolls){
+        for(int i = 0; i < numOfRolls; i++){
+            results[dice.roll()]++;
+        }
+    }
+
     public Integer[] getResults(){
         return results;
     }

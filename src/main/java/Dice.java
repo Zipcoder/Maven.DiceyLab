@@ -2,14 +2,12 @@ import java.util.Random;
 
 public class Dice {
 
-    private Integer result;
     private Integer sides;
     private Integer quantity;
 
     public Dice(Integer quantity, Integer sides) {
         this.quantity = quantity;
         this.sides = sides;
-        this.result = 0;
     }
 
     public Dice(){
