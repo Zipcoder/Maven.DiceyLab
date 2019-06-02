@@ -20,7 +20,12 @@ public class Simulation {
     }
 
     public void getDisplay(){//TODO prints graphical display of normalized dist.
-//        StringBuilder output = new StringBuilder();
-//        for(int i = 0; i < )
+        StringBuilder output = new StringBuilder();
+        Dice d = bin.getDice();
+        for(int i = d.getQuantity(); i < d.getHighestRoll(); i++){
+            output.append(bin.getRawResults()[i]);
+            output.append("\n");
+        }
+        System.out.println(output.toString());
     }
 }
