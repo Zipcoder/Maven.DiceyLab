@@ -15,7 +15,7 @@ public class Simulation {
         bin.runTrial(numberOfTosses);
     }
 
-    public void getDisplay(){//TODO prints graphical display of normalized dist.
+    public void getDisplay(){
         StringBuilder output = new StringBuilder();
         Dice d = bin.getDice();
         for(int i = d.getQuantity(); i <= d.getHighestRoll(); i++){
