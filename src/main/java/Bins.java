@@ -29,6 +29,10 @@ public class Bins {
         return trimmedResults;
     }
 
+    public String getDisplay(){//TODO returns graphical display of normalized dist.
+        return null;
+    }
+
     public Integer[] getRawResults(){
         return results;
     }
