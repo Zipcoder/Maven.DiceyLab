@@ -25,11 +25,20 @@ public class BinsTest {
     public void runTrialTest(){
         // Given
         Integer quantity = 3;
-        Integer sides = 6;
         Integer numberOfTrials = 3;
+        dice = new Dice(quantity); //6 sided dice
+        Bins bin = new Bins(dice);
+        Integer high = dice.getHighestRoll() * numberOfTrials;
+        Integer low = dice.getQuantity() * numberOfTrials;
 
         // When
+        bin.runTrial(numberOfTrials);
+        Integer actual = 0;
+        for(Integer num : bin.getResults()){
+            actual += num;
+        }
 
         // Assert
+//        Assert.assertTrue(actual >= low && actual <= high);
     }
 }
