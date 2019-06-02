@@ -74,4 +74,18 @@ public class DiceTest {
         Integer expected = 18;
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void setQuantityTEst(){
+        // Given
+        dice = new Dice();
+        Integer expected = 4;
+
+        // When
+        dice.setQuantity(expected);
+
+        // Assert
+        Integer actual = dice.getQuantity();
+        Assert.assertEquals(expected, actual);
+    }
 }

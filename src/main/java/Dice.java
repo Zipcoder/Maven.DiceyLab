@@ -25,6 +25,14 @@ public class Dice {
         return sides * quantity;
     }
 
+    public void setQuantity(Integer newSides){
+        this.quantity = newSides;
+    }
+
+    public Integer getQuantity(){
+        return this.quantity;
+    }
+
     public Integer getSides(){
         return sides;
     }
