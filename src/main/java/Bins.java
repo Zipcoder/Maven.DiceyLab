@@ -22,9 +22,9 @@ public class Bins {
     }
 
     public Integer[] getResults(){
-        Integer[] trimmedResults = new Integer[results.length - (1 + dice.getQuantity())];
-        for(int i = dice.getSides(); i < results.length; i++){
-            trimmedResults[i - dice.getSides()] = results[i];
+        Integer[] trimmedResults = new Integer[results.length - dice.getQuantity()];
+        for(int i = 0; i < trimmedResults.length; i++){
+            trimmedResults[i] = results[dice.getQuantity() + i];
         }
         return trimmedResults;
     }

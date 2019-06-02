@@ -59,8 +59,9 @@ public class DiceTest {
         Integer result = dice.roll();
 
         // Assert
-        Boolean expected = (result >= quantity && result <= maxRoll);
-        Assert.assertTrue(expected);
+        Boolean actual = (result >= quantity && result <= maxRoll);
+        System.out.print(result);
+        Assert.assertTrue(actual);
     }
 
     @Test

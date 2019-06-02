@@ -23,7 +23,7 @@ public class Dice {
         Integer result = 0;
         Random r = new Random();
         for(int i = 0; i < quantity; i++){
-            result += r.nextInt(sides) + 1;
+            result += (r.nextInt(sides) + 1);
         }
         return result;
     }
