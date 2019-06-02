@@ -89,4 +89,17 @@ public class DiceTest {
         Integer actual = dice.getQuantity();
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void quantityConstructorTest(){
+        // Given
+        Integer quantity = 8;
+        dice = new Dice(quantity);
+
+        // When
+        Integer actual = dice.getQuantity();
+
+        // Then
+        Assert.assertEquals(quantity, actual);
+    }
 }

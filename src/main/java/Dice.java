@@ -10,6 +10,11 @@ public class Dice {
         this.sides = sides;
     }
 
+    public Dice(Integer quantity){
+        this.quantity = quantity;
+        this.sides = 6;
+    }
+
     public Dice(){
         this(2,6);
     }
