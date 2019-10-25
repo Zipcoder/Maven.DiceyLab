@@ -1,30 +1,34 @@
 package diceylab;
 
-import java.util.ArrayList;
-
 public class Bins {
-    private int min;
+    private int numberOfDice;
     private int max;
+    private Integer[] rollCount;
 
-//    private ArrayList<Integer> rollCountArray = new ArrayList();
-    private Integer[] rollCount;// = new Integer[max];
-
-    public Bins(int min, int max) {
-        this.min = min;
-        this.max = max;
-//        this.rollCountArray = new ArrayList<Integer>(max);
-//        this.rollCount = new Integer[max];
+    public Bins(int numberOfDice) {
+        this.numberOfDice = numberOfDice;
+        this.max = numberOfDice*6;
+        this.rollCount = new Integer[max+1];
+        for (int i = numberOfDice; i <= max; i++) {
+            if (this.rollCount[i] == null) {
+                this.rollCount[i] = 0;
+            }
+        }
     }
-    public Integer incrementBin(int bin) {
 
-        int count = rollCount[bin] + 1;
-        rollCount[bin] = count;
+    public Integer incrementBin(int bin) {
+        int count = 0;
+        if (rollCount[bin] != null) {
+            count = rollCount[bin] + 1;
+            rollCount[bin] = count;
+        }
         return count;
     }
     public Integer getBin(int value) {
         return rollCount[value];
     }
-    public void initBins(int max) {
-        rollCount = new Integer[max];
+
+    public Integer[] getBinsArray() {
+        return rollCount;
     }
 }

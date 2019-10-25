@@ -3,29 +3,72 @@ package diceylab;
 import java.util.Arrays;
 
 public class Simulation {
-    private int numberOfDice;
-    private int numberOfTosses;
+    private int numberOfDice = 2;
+    private int numberOfTosses = 1000000;
+    private int max;
     // Constructor
     public Simulation(int numberOfDice, int numberOfTosses) {
         this.numberOfDice = numberOfDice;
         this.numberOfTosses = numberOfTosses;
+        this.max = numberOfDice*6;
     }
-    public void runSimulation() {
+
+    public static void main(String[] args) {
+        Simulation sim = new Simulation(2, 10000000);
+        Bins bins = sim.runSimulation();
+        sim.printResults(bins);
+
+    }
+
+    public Bins runSimulation() {
         Dice dice = new Dice(numberOfDice);
-//        Bins bins = new Bins(numberOfDice, (numberOfDice * 6));
-        Integer[] rolls = new Integer[(numberOfDice * 6)+1];
+        Bins bins = new Bins(numberOfDice);
         for (int i = 0; i < numberOfTosses; i++) {
             int rollValue = dice.rollDice(); // should be numberOfDice < rollValue < numberOfDice*6
-            if (rolls[rollValue] == null) {
-                rolls[rollValue] = 0;
-            }
-//            System.out.println(Arrays.toString(rolls));
-            rolls[rollValue] += 1; // incrementBin(dice.rollDice());
+            bins.incrementBin(rollValue);
         }
-        System.out.println(Arrays.toString(rolls));
+        return bins;
     }
-    public void printResults() {
+    public Double[] normalizeResults(Bins bins) {
+        Double[] normalizedRolls = new Double[max+1];
+        int total = getTotal(bins);
 
+        for (int i = 0; i <= max; i++) {
+            if (bins.getBin(i) != null) {
+                normalizedRolls[i] = ((double) bins.getBin(i)) / total;
+            }
+        }
+        System.out.println(Arrays.toString(normalizedRolls));
+        return normalizedRolls;
+    }
+
+    public void printResults(Bins bins) {
+        Double[] normalizedRolls = normalizeResults(bins);
+        System.out.printf("***\nSimulation of %s dice tossed for %s times\n***\n", numberOfDice, numberOfTosses);
+        for (int i = 0; i <= (numberOfDice*6); i++) {
+            if (bins.getBin(i) != null) {
+                System.out.printf("%s\t: %8s : %8.2f\t%s\n", i, bins.getBin(i), normalizedRolls[i], getStars(normalizedRolls[i]));
+            }
+        }
+    }
+
+    public String getStars(double normVal) {
+        int numStars = (int) (normVal * 100);
+        StringBuilder stars = new StringBuilder();
+        for (int i = 0; i < numStars; i++) {
+            stars.append("*");
+        }
+        return stars.toString();
+    }
+
+    public Integer getTotal(Bins bins) {
+        int total = 0;
+        for (int i = 0; i <= max; i++) {
+            if (bins.getBin(i) != null) {
+                total += bins.getBin(i);
+            }
+        }
+        return total;
     }
 
 }
