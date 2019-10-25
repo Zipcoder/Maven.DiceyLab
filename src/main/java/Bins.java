@@ -2,7 +2,9 @@ import java.util.Arrays;
 import java.util.ArrayList;
 
 public class Bins {
+
     ArrayList<Integer> numberBin = new ArrayList();
+
     public Bins(int binMin, int binMax) {
         numberBin.ensureCapacity(binMax+1);
         for(int i = 0; i<binMax; i++){

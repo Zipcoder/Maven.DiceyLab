@@ -11,7 +11,6 @@ public class Dice {
         int result = 0;
         Random random = new Random();
 
-
         for(int i = 1; i <= x; i++){
             result = result + random.nextInt(6)+1;
 
