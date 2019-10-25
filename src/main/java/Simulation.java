@@ -3,43 +3,51 @@ import java.util.Arrays;
 public class Simulation {
     Bins diceTable;
     int numberOfDice, numberOfRolls;
-    public Simulation(int x, int y){
+
+    public Simulation(int x, int y) {
         numberOfDice = x;
         numberOfRolls = y;
 
-
     }
-    public void runSimulation(){
+
+    public void runSimulation() {
         Dice dice = new Dice(numberOfDice);
-        diceTable = new Bins(numberOfDice, numberOfDice * 6 + 1);
-        for(int i = 1; i <= numberOfRolls; i++) {
+        diceTable = new Bins(numberOfDice * 6 + 1);
+        for (int i = 0; i <= numberOfRolls; i++) {
 
             diceTable.incrementBin(dice.tossAndSum());
-            System.out.println(diceTable.toString());
+
         }
     }
-    public void printResults(){
+
+    public int getNumberOfDice() {
+        return numberOfDice;
+    }
+
+    public void setNumberOfDice(int numberOfDice) {
+        this.numberOfDice = numberOfDice;
+    }
+
+    public void printResults() {
+        StringBuilder sb = new StringBuilder();
         System.out.println("*** \n" +
-        "Simulation of " + numberOfDice + "dice tossed for " + 1000000 + "times.\n" +
+                "Simulation of " + numberOfDice + "dice tossed for " + numberOfRolls + "times.\n" +
                 "***\n");
-        for(int i = 1; i <= numberOfDice; i++){
-            System.out.printf("%2d %s %6f %s %1.2f %s", i + " :" + diceTable.getBins(i) + ": " + diceTable.getBins(i)/1000000 +" *");
 
+        for (int i = 0; i <= numberOfDice * 6; i++) {
+            System.out.printf("%2d %s %6d %s %1.2f %s", i, " :", diceTable.getBins(i), ": ", (float) diceTable.getBins(i) / (float) numberOfRolls, " ");
+
+            for (int j = 0; j < ((float)diceTable.getBins(i)/(float)numberOfRolls)*100; j++){
+                System.out.print("*");
+            }
+
+            System.out.println();
         }
-
-
-
 
 
     }
 }
-/*
 
-
-
-
-    }
-}*/
 
 
 

@@ -1,23 +1,30 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.ArrayList;
 
 public class Bins {
 
-    ArrayList<Integer> numberBin = new ArrayList();
 
-    public Bins(int binMin, int binMax) {
-        numberBin.ensureCapacity(binMax+1);
+    //ArrayList<Integer> numberBin = new ArrayList();
+
+    Integer[]numberBin;
+
+    public Bins(int binMax) {
+
+        //numberBin.ensureCapacity(binMax);
+        numberBin = new Integer[binMax];
         for(int i = 0; i<binMax; i++){
-            numberBin.set(i, 0);
+            numberBin[i]=0;
+
         }
     }
 
     public int getBins(int returnValue) {
-        return numberBin.get(returnValue);
+        return numberBin[returnValue];
     }
 
     public void incrementBin(int incrNum){
-        numberBin.set(incrNum, numberBin.get(incrNum)+1);
+        numberBin[incrNum] = numberBin[incrNum]+1;
     }
 }
 
