@@ -29,11 +29,11 @@ public class Simulation {
         }
         return bins;
     }
-    // change param to Integer[] rolls
-    // for normalizeResults, getTotal
+
+
     public Double[] normalizeResults(Bins bins) {
         Double[] normalizedRolls = new Double[max+1];
-        int total = getTotal(bins);
+        int total = getTotal(bins.getBinsArray());
         for (int i = 0; i <= max; i++) {
             if (bins.getBin(i) != null) {
                 normalizedRolls[i] = ((double) bins.getBin(i)) / total;
@@ -42,7 +42,7 @@ public class Simulation {
         return normalizedRolls;
     }
 
-    public void printResults(Bins bins) {
+    public String printResults(Bins bins) {
         Double[] normalizedRolls = normalizeResults(bins);
         StringBuilder message = new StringBuilder();
         message.append(String.format("***\nSimulation of %s dice tossed for %s times\n***\n", numberOfDice, numberOfTosses));
@@ -52,6 +52,7 @@ public class Simulation {
             }
         }
         System.out.print(message.toString());
+        return message.toString();
     }
 
     public String getStars(double normVal) {
@@ -63,11 +64,11 @@ public class Simulation {
         return stars.toString();
     }
 
-    public Integer getTotal(Bins bins) {
+    public Integer getTotal(Integer[] rollCount) {
         int total = 0;
-        for (int i = 0; i <= max; i++) {
-            if (bins.getBin(i) != null) {
-                total += bins.getBin(i);
+        for (int i = 0; i < rollCount.length; i++) {
+            if (rollCount[i] != null) {
+                total += rollCount[i];
             }
         }
         return total;

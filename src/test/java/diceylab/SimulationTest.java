@@ -55,7 +55,9 @@ public class SimulationTest {
     @Test
     public void printResultsTest() {
         Simulation sim = new Simulation(2, 100000);
-//        sim.printResults();
+        Bins bins = new Bins(2);
+        String actual = sim.printResults(bins);
+        Assert.assertTrue(actual.length() > 0);
     }
 
     @Test
@@ -80,7 +82,27 @@ public class SimulationTest {
         Assert.assertEquals(expected, actual);
     }
     @Test
-    public void getTotalTest() {
-
+    public void getTotalTest1() {
+        Simulation sim = new Simulation(2, 10);
+        Integer[] arr = {2,3,4,5,6,7,8,9};
+        int actual = sim.getTotal(arr);
+        int expected = 44;
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void getTotalTest2() {
+        Simulation sim = new Simulation(2, 10);
+        Integer[] arr = {2,3,4,5,6,6,6,6,6,6,6,7,8,9};
+        int actual = sim.getTotal(arr);
+        int expected = 80;
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void getTotalTest3() {
+        Simulation sim = new Simulation(2, 10);
+        Integer[] arr = {2,3,44,5,6,47,8,49};
+        int actual = sim.getTotal(arr);
+        int expected = 164;
+        Assert.assertEquals(expected,actual);
     }
 }
