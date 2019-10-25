@@ -29,27 +29,29 @@ public class Simulation {
         }
         return bins;
     }
+    // change param to Integer[] rolls
+    // for normalizeResults, getTotal
     public Double[] normalizeResults(Bins bins) {
         Double[] normalizedRolls = new Double[max+1];
         int total = getTotal(bins);
-
         for (int i = 0; i <= max; i++) {
             if (bins.getBin(i) != null) {
                 normalizedRolls[i] = ((double) bins.getBin(i)) / total;
             }
         }
-        System.out.println(Arrays.toString(normalizedRolls));
         return normalizedRolls;
     }
 
     public void printResults(Bins bins) {
         Double[] normalizedRolls = normalizeResults(bins);
-        System.out.printf("***\nSimulation of %s dice tossed for %s times\n***\n", numberOfDice, numberOfTosses);
+        StringBuilder message = new StringBuilder();
+        message.append(String.format("***\nSimulation of %s dice tossed for %s times\n***\n", numberOfDice, numberOfTosses));
         for (int i = 0; i <= (numberOfDice*6); i++) {
             if (bins.getBin(i) != null) {
-                System.out.printf("%s\t: %8s : %8.2f\t%s\n", i, bins.getBin(i), normalizedRolls[i], getStars(normalizedRolls[i]));
+                message.append(String.format("%s\t: %8s : %8.2f\t%s\n", i, bins.getBin(i), normalizedRolls[i], getStars(normalizedRolls[i])));
             }
         }
+        System.out.print(message.toString());
     }
 
     public String getStars(double normVal) {
