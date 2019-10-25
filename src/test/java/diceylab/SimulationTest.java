@@ -46,4 +46,8 @@ public class SimulationTest {
         String actual = sim.getStars(0.08);
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void getTotalTest() {
+
+    }
 }
