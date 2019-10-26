@@ -45,6 +45,7 @@ public class Simulation {
                 }
 
             System.out.println(String.format(" %2d : %8d : %1.2f  ", index, results, percentRes) + stars);
+
         }
     }
 
