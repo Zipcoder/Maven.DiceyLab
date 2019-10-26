@@ -5,7 +5,7 @@ public class Simulation {
 
     public static void main(String[] args) {
 
-        Simulation newSimulation = new Simulation(4, 1000000);
+        Simulation newSimulation = new Simulation(2, 1000000);
         newSimulation.printResults(newSimulation.runSimulation());
     }
 
@@ -29,6 +29,8 @@ public class Simulation {
     }
 
     public void printResults(Bins bin){
+
+        System.out.println("***\n" + "Simulation of " + numberOfDies + " dice tossed for " + numberOfTosses + " times.\n***\n");
 
         for( int index = numberOfDies; index < lastRes; index++ ){
             int results = bin.getBin(index);
