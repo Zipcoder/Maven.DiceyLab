@@ -1,3 +1,24 @@
+
+
+Pull requests
+Issues
+Marketplace
+Explore
+
+@jeanvalentin51
+ Watch 3
+ Star 0
+ Fork 109 Zipcoder/Maven.DiceyLab
+ Code  Issues 0  Pull requests 21  Projects 0  Wiki  Security  Insights
+Branch: master
+Maven.DiceyLab/.gitignore
+Find file Copy path
+@xt0fer xt0fer empty project
+dd91434 on Feb 23, 2018
+1 contributor
+107 lines (80 sloc)  1.67 KB
+RawBlameHistory
+
 .metadata
 bin/
 tmp/
@@ -104,8 +125,15 @@ target/*
 .project
 .classpath
 .settings
-
-# Apple files
-*.DS_Store
-.AppleDouble
-.LSOverride
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
