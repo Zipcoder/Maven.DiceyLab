@@ -25,7 +25,7 @@ public class Bins {
         this.max = 12;
         for(int i =min; i <= max; i++){
             bin.put(i,0);
-//            System.out.println("Putting 0 at bin " + i); debug output
+//            System.out.println("Putting 0 at bin " + i); // debug output, appears to be working normally
         }
     }
     public void incrementBin(Integer key){
