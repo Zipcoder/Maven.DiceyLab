@@ -1,7 +1,6 @@
 package Package;
 
-import java.sql.SQLOutput;
-import java.util.Arrays;
+
 
 public class Simulation {
     Integer numberOfDice;

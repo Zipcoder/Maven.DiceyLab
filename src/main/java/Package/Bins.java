@@ -17,16 +17,12 @@ public class Bins {
 //    public Integer numOf12 = bin.get(12);
     public int min;
     public int max;
-    public double rollPercentage;
-
-
 
     public Bins(int min, int max){
         this.min = 2;
         this.max = 12;
         for(int i =min; i <= max; i++){
             bin.put(i,0);
-//            System.out.println("Putting 0 at bin " + i); // debug output, appears to be working normally
         }
     }
     public void incrementBin(Integer key){
