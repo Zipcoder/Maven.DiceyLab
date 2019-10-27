@@ -17,6 +17,7 @@ public class Bins {
 //    public Integer numOf12 = bin.get(12);
     public int min;
     public int max;
+    public double rollPercentage;
 
 
 
@@ -32,9 +33,10 @@ public class Bins {
         bin.put(key, bin.get(key) +1);
     }
 
-    public void getBin(int key){
-        System.out.println("Total at bin " + key + " = " + bin.get(key));
+    public Integer getBin(Integer key){
+        return bin.get(key);
     }
+
 
 
 
