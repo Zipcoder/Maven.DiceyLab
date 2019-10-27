@@ -26,7 +26,11 @@ public class Simulation {
 
     void printSimulation(){
         for(int i =results.min; i <= results.max;i++){
-            System.out.println(i + " : " + results.getBin(i) + ": " + "needs fomatting");
+            StringBuilder star = new StringBuilder();
+            for(double j = 0.01; j < (double) results.getBin(i) / numberOfRolls; j+=.01) {
+                star.append("*");
+            }
+                System.out.printf("%-2d%-4s%10d%-4s%-5.2f%s%n", i, ":", results.getBin(i), ":", (double) results.getBin(i) / numberOfRolls,star.toString());
         }
     }
 
