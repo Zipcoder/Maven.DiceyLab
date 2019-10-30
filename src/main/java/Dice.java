@@ -18,9 +18,12 @@ public class Dice {
 //    }
 
 
-        public Integer rollDie1 ()
+        public static Integer rollDie1 (Integer numberOfDiceBeingRolled)
         {
-            dieRoll1 = (int) (Math.random() * 6 + 1);
+            Integer dieRoll1 = 0;
+            for (int i = 1; i <= numberOfDiceBeingRolled; i++) {
+                dieRoll1 += (int) (Math.random() * 6 + 1);
+            }
             return dieRoll1;
         }
 

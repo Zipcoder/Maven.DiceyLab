@@ -18,8 +18,8 @@ public class DiceTest {
     public void diceRollTest()
     {
         Dice dieTest = new Dice ();
-        Integer expected = dieTest.rollDie1();
-        Assert.assertTrue((expected >=1 && expected <=6));
+        Integer expected = dieTest.rollDie1(2);
+        Assert.assertTrue((expected >=2 && expected <=12));
     }
 
 }

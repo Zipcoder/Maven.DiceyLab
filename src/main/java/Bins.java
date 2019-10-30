@@ -4,20 +4,39 @@ import java.util.ArrayList;
 
 
 public class Bins {
-public Integer sumResult;
+    Integer[] counter = new Integer[13];
 
-public Integer[] counter = new Integer[10];
+    public Bins (Integer numberOfDiceRolled){
+        for (int i = numberOfDiceRolled; i< 13; i++)
+        {
+            counter[i]=0;
+        }
+    }
 
 
-    //public ArrayList<Integer> results = new ArrayList<Integer>(12);
+        public Integer getBin(Integer sumResult) {
+            return counter[sumResult];
+        }
 
-//    public Integer getBin(Integer binIndex)
-//    {
-//        return counter [binIndex];
+        public Integer[] getBinsArray ()
+        {
+            return counter;
+        }
+
+
+    //public static Integer sumResult;
+
+//    public Integer[] createBins() {
+//        Integer[] counter = new Integer[13];
+//        return counter;
 //    }
 
-    public void incrementBin(Integer sumResult)
+    public void incrementBin (Integer sumResult)
     {
-        counter[sumResult - 2]++;
+         counter[sumResult]++;
     }
 }
+
+    //public ArrayList<Integer> results = new ArrayList<Integer>(13);
+
+
