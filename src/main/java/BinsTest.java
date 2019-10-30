@@ -9,7 +9,7 @@ public class BinsTest {
     public void binsConstructorTest(){
         // Given
         Integer sides = 6;
-        Integer quantity = 0;
+        Integer quantity = 6;
         dice = new Dice(quantity, sides);
         bin = new Bins(dice);
 

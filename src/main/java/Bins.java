@@ -10,7 +10,7 @@ public class Bins {
     public  Bins(Dice dice){
         this.dice = dice;
         results = new Integer[dice.getHighestRoll() + 1];
-        for(int i = 0; i <= results.length-1; i++){
+        for(int i = 0; i < results.length; i++){
             results[i] = 0;
         }
     }
