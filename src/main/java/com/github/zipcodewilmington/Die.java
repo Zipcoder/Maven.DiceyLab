@@ -14,6 +14,7 @@ public class Die {
         this.numberOfFaces = numberOfFaces;
     }
     // currentDaceValue is set to random value between 1 and numberOfFaces
+
     public void roll() {
         ThreadLocalRandom randomNumberGenerator = ThreadLocalRandom.current();
         Integer randomFaceValue = randomNumberGenerator.nextInt(1, numberOfFaces);
@@ -22,6 +23,9 @@ public class Die {
 
     public Integer getCurrentFaceValue() {
         return currentFaceValue;
+    }
+
+    public Integer getNumberOfFaces() { return numberOfFaces;
     }
 }
 // void and nullary methods change state of the object theyre working on
