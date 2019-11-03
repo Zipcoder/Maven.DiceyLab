@@ -5,27 +5,45 @@ import java.util.HashMap;
 
 public class Bins {
 
-    private Integer start;
-    private Integer end;
+    private int max;
+    private int min;
+    private Map<Integer, Integer> bin;
 
-    private Integer[] results;
+    public Bins(int max, int min) {
+        this.max = max;
+        this.min = min;
+        bin = new TreeMap<>();
+        createBin();
+    }
 
-    public Bins(Integer start, Integer end) {
-        this.start = start;
-        this.end = end;
+    public Map<Integer, Integer> getBin() {
+        return bin;
+    }
 
-        Integer endIdx = end + 1;
-        results = new Integer[endIdx];
+    public void increment(int binNum) {
+        int value = bin.get(binNum);
+        value++;
+        bin.put(binNum, value);
 
-        for (int i = start - 2; i < results.length; i++) {
-            results[i] = 0;
+    }
+
+    public void createBin() {
+        for (int i = min; i <= max; i++) {
+            bin.put(i, 0);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Bins b = new Bins(12,2);
+        for (Map.Entry<Integer, Integer> entry : b.getBin().entrySet()) {
+            System.out.println("Key: " + entry.getKey() + "       Value : " + entry.getValue());
+        }
+        b.increment(3);
+
+        for (Map.Entry<Integer, Integer> entry : b.getBin().entrySet()) {
+            System.out.println("Key: " + entry.getKey() + "       Value : " + entry.getValue());
         }
     }
-    public Integer getBin(Integer countOfNum) {
-        return results[countOfNum];
-    }
 
-    public void incrementBin(Integer binIdx) {
-        results[binIdx]++;
-    }
 }
