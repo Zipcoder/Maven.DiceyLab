@@ -1,27 +1,22 @@
+import java.util.Arrays;
+import java.util.Random;
+
 public class Dice {
 
+    private int rollNum;
 
-    public Dice() {
+    public Dice(int rollNum) {
+        this.rollNum = rollNum;
     }
 
 
-    public Integer rollDie(Integer numOfDice) {
-
-        Integer result = 0;
-
-        for (int i = 0; i < numOfDice; i++) {
-
-            result += (int) (1 + (Math.random() * 6));
+    public int yeetAndSum() {
+        int indexNum = 0;
+        for (int i = 0; i < rollNum; i++) {
+            indexNum += (int) (Math.random() * ((6 - 1) + 1) + 1);
 
         }
-        return result;
+        return indexNum;
     }
-    public int roll() {
-        Integer sum = 0;
-        for(int i = 0; i < numOfDice; i++) {
-            Integer die = (int) (Math.random() * 6) + 1;
-            sum += die;
-        }
-        return sum;
-    }
+
 }
