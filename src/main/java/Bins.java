@@ -1,72 +1,41 @@
-import java.util.Map;
 import java.util.HashMap;
-
-
+import java.util.Map;
 
 public class Bins {
-<<<<<<< HEAD
-    private int dieNum;
-    private int yeetNum;
-    public Bins(int dieNum,
-                int yeetNum){
-        this.dieNum = dieNum;
-    this.yeetNum = yeetNum;
-    }
-    public double[] ammountOfRolls(){
-        Dice die = new Dice(dieNum);
-        double[] occurance = new double[dieNum * 6];
-        for(int i = 0; i < yeetNum; i++)
-            occurance[die.yeetAndSum() - 1] += 1;
-        return occurance;
-    }
-    public void occurancePrint(){ double[] result = ammountOfRolls();
-        for(int i = dieNum - 1; i < result.length; i++){
-            System.out.printf("%4d %s %7.0f %s %1.2f %s", i + 1, " : ", result[i], " : ", result[i]/yeetNum, " ");
-            for(int j = 0; j < (result[i]/yeetNum)* 100; j++)
-                System.out.print("*");
-            System.out.println();
-=======
 
-    private int max;
-    private int min;
-    private Map<Integer, Integer> bin;
+    private int startingSumOfDice;
+    private int endingSumOfDice;
+    private Map<Integer, Integer> frequencies;
 
-    public Bins(int max, int min) {
-        this.max = max;
-        this.min = min;
-        bin = new TreeMap<>();
-        createBin();
+    public Bins(int startingSumOfDice, int endingSumOfDice) {
+        this.startingSumOfDice = startingSumOfDice;
+        this.endingSumOfDice = endingSumOfDice;
+        this.frequencies = new HashMap<Integer, Integer>();
     }
 
-    public Map<Integer, Integer> getBin() {
-        return bin;
-    }
-
-    public void increment(int binNum) {
-        int value = bin.get(binNum);
-        value++;
-        bin.put(binNum, value);
-
-    }
-
-    public void createBin() {
-        for (int i = min; i <= max; i++) {
-            bin.put(i, 0);
+    public void populateBins(Dice dice, int timesRolled) {
+        for (int i = 0; i < timesRolled; i++) {
+            Integer key = dice.tossAndSum();
+            if (frequencies.containsKey(key)) {
+                Integer value = frequencies.get(key);
+                value ++;
+                frequencies.put(key, value);
+            } else {
+                frequencies.put(key, 1);
+            }
         }
-
     }
 
-    public static void main(String[] args) {
-        Bins b = new Bins(12,2);
-        for (Map.Entry<Integer, Integer> entry : b.getBin().entrySet()) {
-            System.out.println("Key: " + entry.getKey() + "       Value : " + entry.getValue());
+    public Integer getBin(int binNumber) {
+        Integer contains = null;
+        for (Map.Entry<Integer, Integer> entry: frequencies.entrySet()) {
+            if (frequencies.containsKey(binNumber)) {
+                contains = frequencies.get(binNumber);
+            } else {
+                System.out.println("Bins do not contain that bin number");
+            }
         }
-        b.increment(3);
-
-        for (Map.Entry<Integer, Integer> entry : b.getBin().entrySet()) {
-            System.out.println("Key: " + entry.getKey() + "       Value : " + entry.getValue());
->>>>>>> 62e6f817c8356d9d263be6bb39bfaea5dce7acd3
-        }
+        return contains;
     }
 
 }

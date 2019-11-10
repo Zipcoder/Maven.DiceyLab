@@ -1,46 +1,36 @@
-import java.util.Arrays;
-import java.util.Random;
+import java.util.ArrayList;
 
 public class Dice {
 
-<<<<<<< HEAD
-    private int rollNum;
 
-    public Dice(int rollNum) {
-        this.rollNum = rollNum;
+    private int numberOfDies;
+
+    public Dice(int numberOfDies) {
+        this.numberOfDies = numberOfDies;
     }
 
-
-    public int yeetAndSum() {
-        int indexNum = 0;
-        for (int i = 0; i < rollNum; i++) {
-            indexNum += (int) (Math.random() * ((6 - 1) + 1) + 1);
-
-        }
-        return indexNum;
-=======
-    //instance variables
-    private Integer numberDice;
-
-    Dice(Integer numberDice) {
-
-        this.numberDice = numberDice;
-    }
-
-    public Integer tossAndSum() {
-
-
-        Integer sum = 0;
-
-        for (int i = 0; i < numberDice; i++) {
-            // random method
-            int random = (int) (Math.random() * 6 + 1);
-            System.out.println(random);
-            sum = sum + random;
-            System.out.println(sum);
+    public int tossAndSum(){
+        int sum = 0;
+        for (int i = 0; i < numberOfDies; i++) {
+            sum += (int)(Math.random()*6) + 1;
         }
         return sum;
->>>>>>> 62e6f817c8356d9d263be6bb39bfaea5dce7acd3
     }
 
+    public int getNumberOfDies() {
+        return this.numberOfDies;
+    }
+
+    public void setNumberofDies(int numberOfDies) {
+        this.numberOfDies = numberOfDies;
+    }
+
+    public ArrayList<Integer> getValuesOfDice() {
+        ArrayList<Integer> valuesOfDice = new ArrayList<Integer>();
+        for (int i = 0; i < numberOfDies; i++) {
+            int value = (int)(Math.random()*6) + 1;
+            valuesOfDice.add(value);
+        }
+        return valuesOfDice;
+    }
 }
