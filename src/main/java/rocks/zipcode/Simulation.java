@@ -1,4 +1,7 @@
-import java.util.Arrays;
+package rocks.zipcode;
+
+import rocks.zipcode.Bins;
+import rocks.zipcode.Dice;
 
 public class Simulation {
     Bins diceTable;
@@ -31,7 +34,7 @@ public class Simulation {
     public void printResults() {
         StringBuilder sb = new StringBuilder();
         System.out.println("*** \n" +
-                "Simulation of " + numberOfDice + "dice tossed for " + numberOfRolls + "times.\n" +
+                "rocks.zipcode.Simulation of " + numberOfDice + "dice tossed for " + numberOfRolls + "times.\n" +
                 "***\n");
 
         for (int i = 0; i <= numberOfDice * 6; i++) {

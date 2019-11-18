@@ -1,3 +1,4 @@
+package rocks.zipcode;
 
 import java.util.Random;
 
