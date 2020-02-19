@@ -1,6 +1,8 @@
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Dice {
     private Integer rolled;
-
 
     public Dice(Integer rolled) {
         this.rolled = rolled;
@@ -8,8 +10,9 @@ public class Dice {
 
     public Integer tossAndSum(){
         Integer sum = 0;
-        for (int i = 1; i <= rolled; i++) {
-            sum += (int) (Math.random()*6) + 1;
+        Random random = new Random();
+        for (int i = 0; i < rolled; i++) {
+            sum += random.nextInt(6)+1;
         }
         return sum;
     }
