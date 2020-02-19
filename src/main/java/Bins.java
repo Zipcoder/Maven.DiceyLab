@@ -8,8 +8,8 @@ public class Bins {
     public Bins(Integer first, Integer last){
         this.first = first;
         this.last = last;
-        this.tracker = new ArrayList<Integer>();
-        for (int i = 0; i <= last + 1; i++) {
+        this.tracker = new ArrayList<>();
+        for (int i = 0; i <= last; i++) {
             this.tracker.add(0);
         }
     }
