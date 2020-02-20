@@ -13,6 +13,18 @@ public class Bins {
         this.bin = new HashMap<>();
     }
 
+    public Map<Integer, Integer> getMap() {
+        return this.bin;
+    }
+
+    public Integer getLowLimit() {
+        return lowLimit;
+    }
+
+    public Integer getHighLimit() {
+        return highLimit;
+    }
+
     public Integer getBin(Integer binNo) {
         return bin.get(binNo);
     }
