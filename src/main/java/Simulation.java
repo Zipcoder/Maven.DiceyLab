@@ -32,7 +32,12 @@ public class Simulation {
 
         for (int i = binLow; i < binHigh + 1; i++) {
             float percen = (float)bin.getBin(i) / this.numberOfTosses;
-            allResults += "" + i + " : " + bin.getBin(i) + ": " + String.format("%.2f", percen) + " **\n";
+            int numStars = bin.getBin(i) / 10000;
+            String endStars = " ";
+            for (int j = 0; j < numStars; j++) {
+                endStars += "*";
+            } endStars += "\n";
+            allResults += "" + i + " : " + bin.getBin(i) + ": " + String.format("%.2f", percen) + endStars;
         }
 
         System.out.println(topLine);
