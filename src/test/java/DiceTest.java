@@ -10,4 +10,11 @@ class DiceTest {
         Integer toss = die.tossAndSum();
         assertTrue(toss > 0 && toss < 7);
     }
+
+    @Test
+    void TestRNG() {
+        Dice die = new Dice(10, new Long(4));
+        Integer toss = die.tossAndSum();
+        assertEquals(35, toss);
+    }
 }

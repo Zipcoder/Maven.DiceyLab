@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,17 +19,29 @@ public class Simulation {
         this.bin = new Bins(binLow, binHigh);
     }
 
-    public void runSimulation() {
-        Dice die = new Dice(this.numberOfDice);
+    public void runSimulation(boolean useSeed) {
+        Dice die;
+        if (useSeed) {
+            die = new Dice(this.numberOfDice, new Long(4));
+        } else {
+            die = new Dice(this.numberOfDice);
+        }
         for (int i = 0; i < this.numberOfTosses; i++) {
             this.bin.incrementBin(die.tossAndSum());
         }
     }
 
-    public void printResults() {
+    public ArrayList<Integer> getAllResults() {
+        ArrayList<Integer> resultsByValue = new ArrayList<>();
+        for (Map.Entry<Integer, Integer> entry : this.bin.getMap().entrySet()) {
+            resultsByValue.add(entry.getValue());
+        }
+        return resultsByValue;
+    }
+
+    public String printResults() {
         String topLine = "***\nSimulation of " + this.numberOfDice + " dice tosses for " + this.numberOfTosses + " times.\n***\n";
         String allResults = "";
-        int sumOfResults = bin.sumOfResults();
 
         for (int i = binLow; i < binHigh + 1; i++) {
             float percen = (float)bin.getBin(i) / this.numberOfTosses;
@@ -42,6 +55,7 @@ public class Simulation {
 
         System.out.println(topLine);
         System.out.println(allResults);
+        return allResults;
     }
 
 }
