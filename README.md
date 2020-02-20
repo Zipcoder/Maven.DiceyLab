@@ -10,15 +10,15 @@ Integer toss = dice.tossAndSum();
 ```
 make a couple unit tests for the Dice class. 
 
-Create a tracking class Bins that can be used to track these results.
+Create a tracking class BinsTest that can be used to track these results.
 
 ```java
-Bins results = new Bins(2, 12); // for bins from 2..12
+BinsTest results = new BinsTest(2, 12); // for bins from 2..12
 Integer numberOfTens = results.getBin(10); // returns the number of tens in the 10 bin
 results.incrementBin(10); // should increment bin # 10
 
 ```
-make a couple unit tests for the Bins class.
+make a couple unit tests for the BinsTest class.
 
 Create a Simulation class whose Constructor takes arguments:
     numberOfDies to throw
