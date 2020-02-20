@@ -29,8 +29,9 @@ public class Simulation {
     }
 
     public void printResults() {
-        LOGGER.info("***\nSimulation of "+ this.numberOfDies+
+        LOGGER.info("\n***\nSimulation of "+ this.numberOfDies+
                 " dice tossed for "+numberOfTosses+" times.\n***\n");
+        String stringy = "\n";
         for (int i = numberOfDies; i <= numberOfDies * 6; i++) {
             double percentage =  bin.getBin(i) / (double) numberOfTosses;
             int starCount = bin.getBin(i) / 10000;
@@ -40,9 +41,10 @@ public class Simulation {
                 stars+= "*";
             }
             //String format for Logger
-            String str = String.format("%1d :"+ "%2d: %3.2f "+stars, i, occurences, percentage);
-            LOGGER.info(str);
+            stringy += String.format("%3d  : %6d: %.2f %s\n", i, occurences, percentage,stars);
+
         }
+        LOGGER.info(stringy);
 
     }
 }
