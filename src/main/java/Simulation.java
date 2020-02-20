@@ -6,14 +6,16 @@ public class Simulation {
 
     private static int noOfRolls;
     private static int noOfDice;
-
+    Dice dice;
+    Bins bin;
 
     public Simulation(int noOfDice, int noOfRolls) {
         this.noOfDice = noOfDice;
         this.noOfRolls = noOfRolls;
+        this.dice = new Dice(noOfDice);
+        this.bin  = new Bins(noOfDice,noOfRolls);
     }
-    Dice dice = new Dice(noOfDice);
-    Bins bin = new Bins(noOfDice,noOfRolls);
+
 
     public int runSimulation(){
         for (int i = 0; i < noOfRolls; i++) {
