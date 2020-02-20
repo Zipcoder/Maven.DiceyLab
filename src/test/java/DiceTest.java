@@ -7,7 +7,7 @@ public class DiceTest {
     @Test
     public void DiceRollTest1Die() {
         Dice dice = new Dice(1);
-        Integer outcome = Dice.tossAndSum();
+        int outcome = Dice.tossAndSum();
         boolean actual = false;
         if(outcome <= 6){
             actual = true;
@@ -18,7 +18,7 @@ public class DiceTest {
     @Test
     public void DiceRollTest2Die(){
         Dice dice = new Dice(2);
-        Integer outcome = Dice.tossAndSum();
+        int outcome = Dice.tossAndSum();
         boolean actual = false;
         if(outcome <= 12){
             actual = true;

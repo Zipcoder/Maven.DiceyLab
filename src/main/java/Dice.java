@@ -7,17 +7,17 @@ public class Dice {
     private static int numberOfDice;
 
     public Dice(int numberOfDice) {
-        this.numberOfDice = numberOfDice;
+        Dice.numberOfDice = numberOfDice;
     }
 
-    public static Integer tossAndSum() {
+    public int tossAndSum() {
         Random rand = new Random();
         Integer result = 0;
         Integer currentRoll;
         for (int i = 1; i <=  numberOfDice; i++) {
             result += rand.nextInt(6)+1;
         }
-        logger.log(Level.INFO,"Current Number is " + result);
+        logger.log(Level.INFO,"Result of rolling " + numberOfDice+ " dice = " + result);
         return result;
     }
 
