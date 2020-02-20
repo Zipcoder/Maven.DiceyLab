@@ -47,10 +47,12 @@ public class Simulation {
             float percen = (float)bin.getBin(i) / this.numberOfTosses;
             int numStars = bin.getBin(i) / 10000;
             String endStars = " ";
+
             for (int j = 0; j < numStars; j++) {
                 endStars += "*";
-            } endStars += "\n";
-            allResults += "" + i + " : " + bin.getBin(i) + ": " + String.format("%.2f", percen) + endStars;
+            }
+            //endStars += "\n";
+            allResults += String.format("%3d  : %6d : %.2f : %s\n", i, bin.getBin(i), percen, endStars);
         }
 
         System.out.println(topLine);
