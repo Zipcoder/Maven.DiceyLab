@@ -22,7 +22,7 @@ public class SimulationTest {
 
     @Test
     public void printResultsTest(){
-        Simulation sim = new Simulation(2,10000000);
+        Simulation sim = new Simulation(2,1000000);
         sim.runSimulation();
         sim.printResults();
     }
