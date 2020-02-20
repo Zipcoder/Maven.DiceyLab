@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class Simulation {
 
@@ -10,6 +11,7 @@ public class Simulation {
     private Integer binHigh;
     private Integer result = 0;
     private Bins bin;
+    private static Logger log = Logger.getLogger(Simulation.class.getName());
 
     public Simulation(Integer noDice, Integer noTosses) {
         this.numberOfDice = noDice;
@@ -40,7 +42,7 @@ public class Simulation {
     }
 
     public String printResults() {
-        String topLine = "***\nSimulation of " + this.numberOfDice + " dice tosses for " + this.numberOfTosses + " times.\n***\n";
+        String topLine = "\n***\nSimulation of " + this.numberOfDice + " dice tosses for " + this.numberOfTosses + " times.\n***\n";
         String allResults = "";
 
         for (int i = binLow; i < binHigh + 1; i++) {
@@ -55,8 +57,10 @@ public class Simulation {
             allResults += String.format("%3d  : %6d : %.2f : %s\n", i, bin.getBin(i), percen, endStars);
         }
 
-        System.out.println(topLine);
-        System.out.println(allResults);
+        log.info(topLine + allResults);
+        //System.out.println(topLine);
+        //System.out.println(allResults);
+
         return allResults;
     }
 
