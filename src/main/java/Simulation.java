@@ -17,13 +17,18 @@ public class Simulation {
     }
 
 
-    public int runSimulation(){
+    public void runSimulation(){
         for (int i = 0; i < noOfRolls; i++) {
             int currentThrow = dice.tossAndSum();
-            bin.incrementBin(currentThrow);
+            this.bin.incrementBin(currentThrow);
             logger.log(Level.INFO,"Result of rolling " + noOfDice+ " dice = " + currentThrow);
         }
-        return bin.getBin(6);
+    }
+
+    public double getPercentage(int number){
+        double result = 0.00;
+        result = (number + .00d)/(noOfRolls + .00d);
+        return result;
     }
 
 
