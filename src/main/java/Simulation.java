@@ -1,9 +1,11 @@
+import com.sun.deploy.util.StringUtils;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Simulation {
     private static Logger logger = Logger.getLogger("Dice");
-
+    private  static  StringUtils utils = new StringUtils();
     private static int noOfRolls;
     private static int noOfDice;
     Dice dice;
@@ -33,10 +35,15 @@ public class Simulation {
         System.out.println(intro);
 
         int range = (noOfDice*6) + 1;
-        for (int i = 2; i <= range; i++) {
+        for (int i = 2; i < range; i++) {
             int binContents = bin.getBin(i);
             double percentage = getPercentage(binContents);
-            String dataForCurrentValue = String.format("%2d:%15d:  %.2f",i,binContents,percentage);
+            double numOfStars = percentage*100;
+            String stars = "";
+            for (int j = 1; j < numOfStars; j++) {
+                stars += "*";
+            }
+            String dataForCurrentValue = String.format("%2d :%15d :  %.2f %s",i,binContents,percentage,stars);
             System.out.println(dataForCurrentValue);
         }
     }
