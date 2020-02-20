@@ -17,8 +17,14 @@ public class SimulationTest {
 
         double actual = sim.getPercentage(noOfNs);
         logger.log(Level.INFO,"Percentage of Ns in " + noOfRolls + " rolls = " + actual +" " +expected);
-        logger.log(Level.INFO, String.valueOf(noOfNs));
         Assert.assertEquals(expected, actual, .000);
+    }
+
+    @Test
+    public void printResultsTest(){
+        Simulation sim = new Simulation(2,10000000);
+        sim.runSimulation();
+        sim.printResults();
     }
 
 }

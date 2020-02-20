@@ -21,15 +21,23 @@ public class Simulation {
         for (int i = 0; i < noOfRolls; i++) {
             int currentThrow = dice.tossAndSum();
             this.bin.incrementBin(currentThrow);
-            logger.log(Level.INFO,"Result of rolling " + noOfDice+ " dice = " + currentThrow);
         }
     }
 
     public double getPercentage(int number){
-        double result = 0.00;
-        result = (number + .00d)/(noOfRolls + .00d);
-        return result;
+        return (number + .00d)/(noOfRolls + .00d);
     }
+//    Simulation of 2 dice tossed for 1000000 times.
+    public void printResults(){
+        String intro = String.format("***%nSimulation of %d dice tossed for %d times.%n***",noOfDice,noOfRolls);
+        System.out.println(intro);
 
-
+        int range = (noOfDice*6) + 1;
+        for (int i = 2; i <= range; i++) {
+            int binContents = bin.getBin(i);
+            double percentage = getPercentage(binContents);
+            String dataForCurrentValue = String.format("%2d:%15d:  %.2f",i,binContents,percentage);
+            System.out.println(dataForCurrentValue);
+        }
+    }
 }
