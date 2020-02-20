@@ -24,7 +24,7 @@ public class Simulation {
         for (int i = this.numOfDice; i <= this.numOfDice*6; i++) {
             Integer occurance = this.bin.getBin(i);
             Double percent = Double.parseDouble(occurance.toString()) / this.bin.getTotal();
-            System.out.printf("%1$2d : %2$9d.0f: %3$.2f ", i, occurance, percent);
+            System.out.printf("%1$2d : %2$9d: %3$.2f ", i, occurance, percent);
             int numStars = (int)(percent*100);
             for (int j = 0; j < numStars; j++) {
                 System.out.print("*");
