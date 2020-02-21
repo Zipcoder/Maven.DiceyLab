@@ -1,10 +1,10 @@
 import java.util.Arrays;
 
 public class Simulation {
-    Bins bin;
-    Dice dice;
-    Integer numberOfTosses;
-    public Integer numberOfDies;
+    private Bins bin;
+    private Dice dice;
+    private Integer numberOfTosses;
+    private Integer numberOfDies;
 
 
 
@@ -23,25 +23,23 @@ public class Simulation {
     }
 
     public void printResults(){
-        String toPrint = "***\nSimulation of 2 dice tossed for 1Mx.\n***\n\n";
+        StringBuilder toPrint = new StringBuilder("***\nSimulation of 2 dice tossed for 1Mx.\n***\n\n");
         Integer valueOfRange;
         for (int i = numberOfDies; i < bin.lengthArray + numberOfDies + 1; i++) {
             valueOfRange = bin.getBin(i);
-            toPrint += String.format("%2d",i) + " : "
-                    + String.format("%8d", valueOfRange) + " : "
-                    + String.format("%5.2f", ((float)valueOfRange/(float)numberOfTosses)) + " "
-                    + asterisks(100 * valueOfRange / numberOfTosses)
-                    + "\n";
+            toPrint.append(
+                String.format("%2d", i))
+                .append(" : ")
+                .append(String.format("%8d", valueOfRange)).append(" : ")
+                .append(String.format("%5.2f", ((float) valueOfRange / (float) numberOfTosses)))
+                .append(" ")
+                .append(asterisks(100 * valueOfRange / numberOfTosses)).append("\n");
         }
         System.out.println( toPrint );
     }
 
     public String asterisks(Integer sample){
-        String str = "";
-        for (int i = 0; i < sample; i++) {
-            str += "*";
-        }
-        return str;
+        return "*".repeat(sample);
     }
 
     public static void main(String[] args) {
@@ -50,4 +48,5 @@ public class Simulation {
         sim.printResults();
 
     }
+
 }

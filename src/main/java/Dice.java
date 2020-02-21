@@ -3,33 +3,26 @@ import java.util.Random;
 
 public class Dice {
 
-
     private int number;
-    Random rand = new Random();
-
 
     public Dice(int number) {
         this.number = number;
     }
 
     public Integer tossAndSum() {
-        Integer sum = 0;
-        Integer alea;
+        int sum = 0;
+        int alea;
         for (int i = 0; i < number; i++) {
-            alea = getRandomNumberInRange(1,6);
+            alea = getRandomNumberInRange();
             sum +=  alea;
         }
         return sum;
     }
 
-    private static int getRandomNumberInRange(int min, int max) {
-
-        if (min >= max) {
-            throw new IllegalArgumentException("Max must be greater than min");
-        }
+    private static int getRandomNumberInRange() {
 
         Random r = new Random();
-        return r.nextInt((max - min) + 1) + min;
+        return r.nextInt((6 - 1) + 1) + 1;
     }
 
 
