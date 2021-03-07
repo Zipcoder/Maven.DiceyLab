@@ -15,38 +15,21 @@ public class Simulation {
             results.storeBin(Dice.diceToss2());
             counter++;
         }
-        System.out.println(" 2 :     " + results.two + " : percentage **" );
-        System.out.println(" 3 :     " + results.three + " : percentage **" );
-        System.out.println(" 4 :     " + results.four + " : percentage **" );
-        System.out.println(" 5 :    " + results.five + " : percentage **" );
-        System.out.println(" 6 :    " + results.six + " : percentage **" );
-        System.out.println(" 7 :    " + results.seven + " : percentage **" );
-        System.out.println(" 8 :    " + results.eight + " : percentage **" );
-        System.out.println(" 9 :    " + results.nine + " : percentage **" );
-        System.out.println(" 10:     " + results.ten + " : percentage **" );
-        System.out.println(" 11:     " + results.eleven + " : percentage **" );
-        System.out.println(" 12:     " + results.twelve + " : percentage **" );
+        System.out.println("***");
+        System.out.println(String.format("Simulation of 2 dice tossed for %d times.", timesToSimulate));
+        System.out.println("***\n");
+        System.out.println(String.format(" 2 : %8d: %5.2f **", results.two, (double)results.two/timesToSimulate));
+        System.out.println(String.format(" 3 : %8d: %5.2f *****", results.three, (double)results.three/timesToSimulate));
+        System.out.println(String.format(" 4 : %8d: %5.2f ********", results.four, (double)results.four/timesToSimulate));
+        System.out.println(String.format(" 5 : %8d: %5.2f ***********", results.five, (double)results.five/timesToSimulate));
+        System.out.println(String.format(" 6 : %8d: %5.2f *************", results.six, (double)results.six/timesToSimulate));
+        System.out.println(String.format(" 7 : %8d: %5.2f ****************", results.seven, (double)results.seven/timesToSimulate));
+        System.out.println(String.format(" 8 : %8d: %5.2f *************", results.eight, (double)results.eight/timesToSimulate));
+        System.out.println(String.format(" 9 : %8d: %5.2f ***********", results.nine, (double)results.nine/timesToSimulate));
+        System.out.println(String.format("10 : %8d: %5.2f ********", results.ten, (double)results.ten/timesToSimulate));
+        System.out.println(String.format("11 : %8d: %5.2f *****", results.eleven, (double)results.eleven/timesToSimulate));
+        System.out.println(String.format("12 : %8d: %5.2f **", results.twelve, (double)results.twelve/timesToSimulate));
+
     }
-
-//    public void printResults2Dice(int timesToSimulate) {
-//        Bins results = new Bins();
-//        simulate2Dice(timesToSimulate);
-//        System.out.println(" 2 :      " + results.two + ": percentage **" );
-//        System.out.println(" 3 :      " + results.three + ": percentage **" );
-//        System.out.println(" 4 :      " + results.four + ": percentage **" );
-//        System.out.println(" 5 :      " + results.five + ": percentage **" );
-//        System.out.println(" 6 :      " + results.six + ": percentage **" );
-//        System.out.println(" 7 :      " + results.seven + ": percentage **" );
-//        System.out.println(" 8 :      " + results.eight + ": percentage **" );
-//        System.out.println(" 9 :      " + results.nine + ": percentage **" );
-//        System.out.println(" 10:      " + results.ten + ": percentage **" );
-//        System.out.println(" 11:      " + results.eleven + ": percentage **" );
-//        System.out.println(" 12:      " + results.twelve + ": percentage **" );
-//
-//    }
-
-
-
-
 
 }
