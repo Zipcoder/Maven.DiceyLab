@@ -7,7 +7,6 @@ public class Simulation {
     private Integer numOfToss;
     private Integer numOfDice;
     private Integer min;
-    private Integer max;
 
     public Simulation(Integer numOfDice, Integer numOfToss){
         this.numOfToss = numOfToss;
@@ -24,13 +23,15 @@ public class Simulation {
     }
 
     public void printResult(){
+        //Heading
         String result = "***\n" +
                         "Simulation of " + numOfDice + " dice tossed for " + numOfToss+ " times.\n" +
                         "***\n";
+        //Iterating through each box and constructing string of boxNumber, values, percentage, stars.
         Integer[] thisBin = bin.getBoxes();
         for(int i = 0; i < thisBin.length; i++) {
             int boxId = i + min;
-            String addToResult = getBoxNumber(i) + " :" + getBoxValue(bin.getBin(i + min)) + " : " + bin.getPercent(i + min) +
+            String addToResult = getBoxNumber(i) + " :" + getBoxValue(bin.getBin(i + min)) + ": " + bin.getPercent(i + min) +
                                 " " + getStars(bin.getPercent(i + min)) + "\n";
             result += addToResult;
         }
@@ -40,7 +41,7 @@ public class Simulation {
     private String getBoxNumber(Integer i){
         String result = ""; //3 spaces
         Integer numberSpaces = i + min;
-        Integer whiteSpaces = 4 - numberSpaces.toString().length();
+        Integer whiteSpaces = 3 - numberSpaces.toString().length();
         for (int j = 0; j < whiteSpaces; j++) {
             result += " ";
         }
