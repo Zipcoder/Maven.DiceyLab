@@ -1,23 +1,30 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Dice {
-    private ArrayList<Integer> diceList = new ArrayList<Integer>();
+    private ArrayList<Integer> rollResults;
 
     public Dice(Integer countOfDice) {
+        this.rollResults = new ArrayList<>();
         for (int i = 0; i < countOfDice; i++) {
-            this.diceList.add((int) ((Math.random() * (6 - 1)) + 1));
+            this.rollResults.add((int) ((Math.random() * (7 - 1)) + 1));
         }
     }
+
     public ArrayList<Integer> getDiceList() {
-        return diceList;
+        return rollResults;
+    }
+
+    public void toss(){
+        for (int i = 0; i < rollResults.size(); i++) {
+            rollResults.set(i, (int) ((Math.random() * (7 - 1)) + 1));
+        }
     }
 
     public Integer tossAndSum() {
         Integer sum = 0;
-        for (int i = 0; i < diceList.size(); i++) {
-            diceList.set(i, (int) ((Math.random() * (6 - 1)) + 1));
-            sum += diceList.get(i);
+        for (int i = 0; i < rollResults.size(); i++) {
+            rollResults.set(i, (int) ((Math.random() * (7 - 1)) + 1));
+            sum += rollResults.get(i);
         }
         return sum;
     }
