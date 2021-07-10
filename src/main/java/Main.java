@@ -4,5 +4,6 @@ public class Main {
         Simulation newSim = new Simulation(2, 1000000);
         newSim.runSim();
         newSim.printResult();
+
     }
 }
