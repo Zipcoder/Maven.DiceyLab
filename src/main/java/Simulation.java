@@ -31,21 +31,20 @@ public class Simulation {
         Integer[] thisBin = bin.getBoxes();
         for(int i = 0; i < thisBin.length; i++) {
             int boxId = i + min;
-            String addToResult = getBoxNumber(i) + " :" + getBoxValue(bin.getBin(i + min)) + ": " + bin.getPercent(i + min) +
-                                " " + getStars(bin.getPercent(i + min)) + "\n";
+            String addToResult = getBoxNumber(boxId) + " :" + getBoxValue(bin.getBin(boxId)) + ": " + bin.getPercent(boxId) +
+                                " " + getStars(bin.getPercent(boxId)) + "\n";
             result += addToResult;
         }
         System.out.println(result);
     }
 
-    private String getBoxNumber(Integer i){
+    private String getBoxNumber(Integer boxID){
         String result = ""; //3 spaces
-        Integer numberSpaces = i + min;
-        Integer whiteSpaces = 3 - numberSpaces.toString().length();
+        Integer whiteSpaces = 3 - boxID.toString().length();
         for (int j = 0; j < whiteSpaces; j++) {
             result += " ";
         }
-        result += numberSpaces.toString();
+        result += boxID.toString();
         return result;
     }
 
