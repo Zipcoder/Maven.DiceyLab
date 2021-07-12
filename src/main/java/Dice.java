@@ -2,44 +2,56 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dice {
-    Integer numberOfRolls;
-    Integer numberOfDice;
-    List<Integer> diceContainerForCraps = new ArrayList<Integer>();
 
-    public Dice (Integer numberOfDice, Integer numberOfRolls) {
-        this.numberOfRolls = numberOfRolls;
-        this.numberOfDice = numberOfDice;
-    }
-    public Dice () {
-    }
+    private ArrayList<Integer> rollingResults;
+    private Integer numOfDice = 2;
+    private Integer sumOfDice;
 
-    public List<Integer> tossAndSumForCraps (Integer numberOfDice, Integer numberOfRolls) {
-        Integer result = 0;
-        List<Integer> diceContainer = this.getDiceContainerForCraps();
-        for (int i = 0; i < numberOfRolls; i++) {
-            Integer dice1 = (int) (Math.random() * (7 - 1) + 1);
-            Integer dice2 = (int) (Math.random() * (7 - 1) + 1);
-            result = dice1 + dice2;
-            diceContainer.add(i, result);
+    public Dice (Integer countOfDice) {
+        this.rollingResults = new ArrayList<>();
+        for (int i = 0; i < countOfDice; i++) {
+            this.rollingResults.add((int) ((Math.random() * (7 - 1)) + 1));
         }
-      //  diceContainer.addAll(diceContainerForCraps);
-        setDiceContainerForCraps(diceContainer);
-        return diceContainerForCraps;
     }
 
-    public Integer getNumberOfRolls() {
-        return this.numberOfRolls;
+    public ArrayList<Integer> getRollingResults() {
+        return rollingResults;
     }
 
-    public Integer getNumberOfDice() {
-        return this.numberOfRolls;
+    public void setRollingResults(ArrayList<Integer> rollingResults) {
+        this.rollingResults = rollingResults;
     }
 
-    public List<Integer> getDiceContainerForCraps() {
-        return diceContainerForCraps;
+    public Integer tossAndSum () {
+        Integer sum = 0;
+        for (int i = 0; i < rollingResults.size(); i++) {
+            rollingResults.set(i, (int) ((Math.random() * (7 - 1)) + 1));
+            sum += rollingResults.get(i);
+        }
+        return sum;
     }
 
-    public void setDiceContainerForCraps(List<Integer> diceContainerForCraps) {
-        this.diceContainerForCraps = diceContainerForCraps;
+//    public void initializeDiceList () {
+//        Integer numOfDice = getNumOfDice();
+//        List<Integer> rollingResults = this.getRollingResults();
+//        for (int i = 0; i < numOfDice; i++) {
+//            rollingResults.add(0);
+//        }
+
+
+    public Integer getNumOfDice() {
+        return numOfDice;
+    }
+
+    public void setNumOfDice(Integer numOfDice) {
+        this.numOfDice = numOfDice;
+    }
+
+    public Integer getSumOfDice() {
+        return sumOfDice;
+    }
+
+    public void setSumOfDice(Integer sumOfDice) {
+        this.sumOfDice = sumOfDice;
     }
 }
