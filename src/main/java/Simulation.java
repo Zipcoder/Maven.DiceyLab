@@ -36,9 +36,12 @@ public class Simulation {
             int index = i+2;
             int freq = results[i];
             float percent = (float) results[i] / this.numberOfRolls;
-            int asterickValue = (int) percent * 100;
-            System.out.printf("%2d : %8d : %.2f " + "* \n", index, freq, percent);
-
+            int asterickValue = (int) (percent * 100); //casting takes precedence over order of operations
+            System.out.printf("%2d : %8d : %.2f ", index, freq, percent);
+            for (int j = 0; j < asterickValue; j++) {
+                    System.out.print("*");
+            }
+            System.out.println();
             }
 
     }
